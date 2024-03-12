@@ -1,0 +1,19 @@
+.wrapper{
+    height: 300px;
+    width: 100px;
+    background-color: black; 
+    padding: 10px;
+    margin: 30vh;
+    
+}
+
+.gray{
+    height: 80px;
+    width: 80px;
+    display: flex;
+    border-radius: 100px;
+    flex-direction: column;
+    background-color: gray;
+    margin: 10px;
+
+}

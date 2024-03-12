@@ -1,8 +1,12 @@
+import './App.css'
+
 function TrafficLight(){
     return(
-        <>
-        <h1>HELLO!!!!!!!!SET UP</h1>
-        </>
+        <div className="wrapper">
+        <div className="gray"></div>
+        <div className="gray"></div>
+        <div className="gray"></div>
+        </div>
     )
 }
 
