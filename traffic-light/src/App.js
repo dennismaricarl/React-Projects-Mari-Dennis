@@ -4,7 +4,7 @@ import './App.css';
 function App() {
 
   const trafficColors = {
-    red: {
+    red: { 
       backgroundColor: "red",
       duration: 4000,
       next: "green"

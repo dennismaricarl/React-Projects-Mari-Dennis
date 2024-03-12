@@ -7,7 +7,7 @@ function TrafficLight({trafficColors}){
 const [currentColor, setCurrentColor] = useState('green');
 
 useEffect(()=> {
-const {duration, next} = trafficColors
+const {duration, next} = trafficColors[currentColor]
     //logic here 
     // setCurrentColor(next)
     //use setTimeOut
