@@ -1,11 +1,17 @@
 import './App.css'
 
-function TrafficLight(){
+import {useState} from 'react';
+
+function TrafficLight({trafficColors}){
+const [currentColor, setCurrentColor] = useState('green');
+
     return(
         <div className="wrapper">
-        <div className="gray"></div>
-        <div className="gray"></div>
-        <div className="gray"></div>
+        {Object.keys(trafficColors).map((keyColor)=> (
+            <div className="gray" style={{
+                backgroundColor: keyColor === currentColor && trafficColors[keyColor].backgroundColor 
+            }}></div>
+        ))}
         </div>
     )
 }
