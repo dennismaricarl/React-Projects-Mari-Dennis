@@ -21,9 +21,17 @@ function App() {
     }
   }
   return (
-    <div>
+    <>
+    <div className="wrapper">
       <TrafficLight trafficColors={trafficColors}/>
+      <TrafficLight trafficColors={trafficColors}/>
+      <TrafficLight trafficColors={trafficColors}/>
+      <TrafficLight trafficColors={trafficColors}/>
+      <TrafficLight trafficColors={trafficColors} layout="horizontal"/>
+      <TrafficLight trafficColors={trafficColors} layout="horizontal"/>
+      <TrafficLight trafficColors={trafficColors} layout="horizontal"/>
     </div>
+    </>
   );
 }
 

@@ -1,19 +1,36 @@
-.wrapper{
-    height: 300px;
-    width: 100px;
-    background-color: black; 
-    padding: 10px;
-    margin: 30vh;
-    
-}
-
-.gray{
+.trafficCircles{
     height: 80px;
     width: 80px;
     display: flex;
     border-radius: 100px;
-    flex-direction: column;
     background-color: gray;
     margin: 10px;
+}
 
+.vertical{
+    height: 300px;
+    width: 100px;
+    background-color: black; 
+    padding: 10px;
+    margin: 50px;
+    border-radius: 100px;
+   
+}
+
+.horizontal{
+    height: 100px;
+    width: 300px;
+    background-color: black; 
+    padding: 10px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    margin: 20px;
+    border-radius: 100px;
+    
+}
+
+.wrapper{
+    margin: 80px;
+    display:inline-grid;
+    grid-template-columns: auto auto auto auto;
 }

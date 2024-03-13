@@ -2,15 +2,12 @@ import './App.css'
 
 import {useState, useEffect} from 'react';
 
-function TrafficLight({trafficColors}){
+function TrafficLight({trafficColors, layout}){
 
 const [currentColor, setCurrentColor] = useState('green');
 
 useEffect(()=> {
 const {duration, next} = trafficColors[currentColor]
-    //logic here 
-    // setCurrentColor(next)
-    //use setTimeOut
 const timer = setTimeout(()=> {setCurrentColor(next)}, duration);
 
 return()=> {
@@ -19,13 +16,17 @@ return()=> {
 }, [currentColor])
 
     return(
-        <div className="wrapper">
+        <>
+        <div className={layout === 'horizontal' ? 'horizontal' : 'vertical'}>
         {Object.keys(trafficColors).map((keyColor)=> (
-            <div className="gray" style={{
-                backgroundColor: keyColor === currentColor && trafficColors[keyColor].backgroundColor 
-            }}></div>
+            <div className="trafficCircles" style={{
+                backgroundColor: keyColor === currentColor && trafficColors[keyColor].backgroundColor
+            }}>
+            </div> 
         ))}
-        </div>
+        </div>  
+        </>
+
     )
 }
 
