@@ -22,6 +22,7 @@ function App() {
   }
   return (
     <>
+    <h1>Collection of traffic lights</h1>
     <div className="wrapper">
       <TrafficLight trafficColors={trafficColors}/>
       <TrafficLight trafficColors={trafficColors}/>

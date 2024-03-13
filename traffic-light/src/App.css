@@ -1,3 +1,15 @@
+.wrapper{
+    margin: 0px;
+    display:inline-grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+h1{
+    font-family: monospace;
+    text-align: center;
+    margin-top: 90px;
+}
+
 .trafficCircles{
     height: 80px;
     width: 80px;
@@ -27,10 +39,4 @@
     margin: 20px;
     border-radius: 100px;
     
-}
-
-.wrapper{
-    margin: 80px;
-    display:inline-grid;
-    grid-template-columns: auto auto auto auto;
 }
