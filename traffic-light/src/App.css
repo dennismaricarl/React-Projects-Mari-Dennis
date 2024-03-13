@@ -10,6 +10,12 @@ h1{
     margin-top: 90px;
 }
 
+.sign{
+    margin-left: 85%;
+    font-family: monospace;
+    font-size: 17px;
+}
+
 .trafficCircles{
     height: 80px;
     width: 80px;

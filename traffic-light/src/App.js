@@ -33,6 +33,7 @@ function App() {
       <TrafficLight trafficColors={trafficColors} layout="horizontal"/>
       <TrafficLight trafficColors={trafficColors} layout="horizontal"/>
     </div>
+    <h1 className="sign">By Mari Dennis</h1>
     </>
   );
 }
