@@ -5,6 +5,7 @@ function App() {
   return (
     <div >
       <h1>TODO PROJECT SET UP</h1>
+      <TodoList/>
     </div>
   );
 }
