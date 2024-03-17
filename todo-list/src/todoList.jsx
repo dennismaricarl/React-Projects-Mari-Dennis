@@ -16,6 +16,10 @@ function TodoList() {
     setAddItem("");
   }
 
+  function handleDelete(key){
+    setTask(tasks.filter((item)=> item.key !== key))
+  }
+
   return (
     <div>
       <label>To-do List</label>
@@ -31,7 +35,9 @@ function TodoList() {
       {tasks.map(({ key, msg }) => (
         <div key={key}>
           <ul>
-            <li>{msg}</li>
+            <li>{msg}  
+            <button onClick={()=> handleDelete(key)}>Delete</button> 
+            </li>
           </ul>
         </div>
       ))}
