@@ -30,7 +30,10 @@ function TodoList() {
   }
 
   function handleDelete(key){
-    setTask(tasks.filter((item)=> item.key !== key))
+    const updatedTasks = (tasks.filter((item)=> item.key !== key))
+    setTask(updatedTasks)
+    localStorage.removeItem("tasks")
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks))
   }
 
   return (
