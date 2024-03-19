@@ -1,4 +1,8 @@
 import { useState, useEffect } from "react";
+import Card from '@mui/material/Card';
+import { CardContent, TextField, Button } from "@mui/material";
+import SendIcon from '@mui/icons-material/Send'
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function TodoList() {
   const initialTasks = [
@@ -38,25 +42,27 @@ function TodoList() {
 
   return (
     <div>
+      <Card sx={{margin:57, marginTop:8, padding:5}}>
+      <CardContent>
       <label>To-do List</label>
       <br />
-      <input
+      <div style={{display:'flex', alignItems:'center'}}>
+      <TextField variant="outlined" sx={{width:3000}}
         type="text"
+        placeholder="Enter task"
         value={addItem}
-        onChange={(e) => setAddItem(e.target.value)}
-      />
-      <br />
-      <button onClick={handleSubmit}>Submit</button>
-
-      {tasks.map(({ key, msg }) => (
-        <div key={key}>
-          <ul>
-            <li>{msg}  
-            <button onClick={()=> handleDelete(key)}>Delete</button> 
-            </li>
-          </ul>
+        onChange={(e) => setAddItem(e.target.value)}/> 
+        <Button variant='contained' startIcon={<SendIcon/>} sx={{marginLeft:1, borderRadius:180}} onClick={handleSubmit}></Button>
         </div>
+      {tasks.map(({ key, msg }) => (
+        <div style={{display:'flex', alignItems:'center'}} key={key}>
+           <p>{msg}</p>
+           <Button startIcon={<DeleteIcon />} sx={{marginLeft:'auto'}}onClick={()=> handleDelete(key)}></Button> 
+        </div>
+        
       ))}
+      </CardContent>
+      </Card>
     </div>
   );
 }
