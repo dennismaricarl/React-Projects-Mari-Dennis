@@ -14,22 +14,20 @@ function TodoList() {
   const [addItem, setAddItem] = useState("");
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem("tasks")); //retrieves tasks from local storage
+    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
     if (storedTasks) {
       setTask(storedTasks);
     }
   }, []);
-  //recall: empty dependency=> side effect will run only once when the component mounts(first rendered & inserted into the DOM)
-  //updating of tasks is managed by useState + updating of localStorage to persist updated task list
 
   function handleSubmit(e) {
     e.preventDefault();
     let newItem = { key: Date.now(), msg: addItem };
     const newTasks = [...tasks, newItem];
-    addItem && setTask(newTasks); // here is the updating of tasks
+    addItem && setTask(newTasks);
     setAddItem("");
 
-    localStorage.setItem("tasks", JSON.stringify(newTasks)); //data storing/updating of localStorage to persist the updated task list
+    localStorage.setItem("tasks", JSON.stringify(newTasks));
   }
 
   function handleDelete(key) {
@@ -39,13 +37,12 @@ function TodoList() {
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   }
 
-  function handleEdit(key){
+  function handleEdit(key) {
     const specificItem = tasks.find((item) => item.msg === key);
-    setAddItem(specificItem.msg)
-    
+    setAddItem(specificItem.msg);
+
     const updatedList = tasks.filter((item) => item.msg !== key);
-    setTask([...updatedList])
-     
+    setTask([...updatedList]);
   }
 
   return (
@@ -78,15 +75,15 @@ function TodoList() {
           {tasks.map(({ key, msg }) => (
             <div style={{ display: "flex", alignItems: "center" }} key={key}>
               <Typography fontFamily="Georgia">{msg}</Typography>
-                <Button
-                  startIcon={<EditNoteIcon />}
-                  sx={{marginLeft:'auto'}}
-                  onClick={() => handleEdit(msg)}
-                ></Button>
-                <Button
-                  startIcon={<DeleteIcon />}
-                  onClick={() => handleDelete(key)}
-                ></Button>
+              <Button
+                startIcon={<EditNoteIcon />}
+                sx={{ marginLeft: "auto" }}
+                onClick={() => handleEdit(msg)}
+              ></Button>
+              <Button
+                startIcon={<DeleteIcon />}
+                onClick={() => handleDelete(key)}
+              ></Button>
             </div>
           ))}
         </CardContent>
