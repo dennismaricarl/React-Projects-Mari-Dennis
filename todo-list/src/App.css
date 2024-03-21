@@ -1,0 +1,14 @@
+.listItem{
+   display: flex 
+}
+.listItem:hover{
+    background-color: rgb(220, 231, 239); 
+}
+
+.editIcon {
+    color:rgb(75, 193, 236)
+}
+
+.deleteIcon {
+    color:rgb(228, 111, 111)
+}
