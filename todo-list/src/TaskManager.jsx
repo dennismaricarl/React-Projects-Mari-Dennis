@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import { CardContent, TextField, Button, Typography } from "@mui/material";
 import TaskItem from "./TaskItem";
 
-function TodoList() {
+function TaskManager() {
   const initialTasks = [
     { key: 0, msg: "Walk the dog" },
     { key: 1, msg: "Wash the dishes" },
@@ -85,4 +85,4 @@ function TodoList() {
   );
 }
 
-export default TodoList;
+export default TaskManager;

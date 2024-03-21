@@ -1,11 +1,11 @@
 import './App.css';
-import TodoList from './todoList';
+import TaskManager from './TaskManager';
 
 function App() {
   
   return (
     <div >
-      <TodoList/>
+      <TaskManager/>
     </div>
   );
 }
