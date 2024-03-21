@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import { CardContent, TextField, Button, Typography } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
-import IconButton from "@mui/material/IconButton";
-import DeleteIcon from "@mui/icons-material/Delete";
+import TaskItem from "./TaskItem";
 
 function TodoList() {
   const initialTasks = [
@@ -74,18 +72,12 @@ function TodoList() {
             </Button>
           </div>
           {tasks.map(({ key, msg }) => (
-            <div className="listItem" key={key}>
-              <Typography fontFamily="Georgia">{msg}</Typography>
-              <div style={{ marginLeft: "auto" }}>
-                <IconButton onClick={() => handleEdit(msg)}>
-                  <EditIcon className="editIcon" />
-                </IconButton>
-
-                <IconButton onClick={() => handleDelete(key)}>
-                  <DeleteIcon className="deleteIcon" />
-                </IconButton>
-              </div>
-            </div>
+            <TaskItem
+              key={key}
+              msg={msg}
+              handleEdit={handleEdit}
+              handleDelete={() => handleDelete(key)}
+            />
           ))}
         </CardContent>
       </Card>
