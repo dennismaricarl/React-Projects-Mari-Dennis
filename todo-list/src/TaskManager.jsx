@@ -48,22 +48,21 @@ function TaskManager() {
     const toggle = (oldTasks) =>
       oldTasks.map((task) =>
         task.key === key ? { ...task, checked: !task.checked } : task
-      )
+      );
 
-      const updatedItems= toggle(tasks)  
-      //invoke the toggle function and pass tasks as an argument 
-      //toggle(tasks) executes the toggle function with the current tasks array
-      //and it returns a new array of tasks where the checked state is toggled for the task with the provided key. 
-    
-      setTask(updatedItems)
+    const updatedItems = toggle(tasks);
+    //invoke the toggle function and pass tasks as an argument
+    //toggle(tasks) executes the toggle function with the current tasks array
+    //and it returns a new array of tasks where the checked state is toggled for the task with the provided key.
 
-      localStorage.setItem("tasks", JSON.stringify(updatedItems))
+    setTask(updatedItems);
+
+    localStorage.setItem("tasks", JSON.stringify(updatedItems));
   }
- 
 
   return (
     <div>
-      <Card sx={{ml:50,mr:50,mt:15,mb:20, padding: 5 }}>
+      <Card sx={{ ml: 50, mr: 50, mt: 15, mb: 20, padding: 5 }}>
         <CardContent>
           <Typography fontFamily="Georgia" fontSize={50} textAlign="center">
             To Do List
@@ -80,7 +79,7 @@ function TaskManager() {
             />
             <Button
               variant="contained"
-              sx={{ mb: 3, padding:1}}
+              sx={{ mb: 3, padding: 1 }}
               onClick={handleSubmit}
             >
               <Typography fontFamily="Georgia" fontSize={25}>
@@ -88,19 +87,23 @@ function TaskManager() {
               </Typography>
             </Button>
           </div>
-          {tasks && tasks.map(({ key, msg }) => (
-            <TaskItem
-              key={key}
-              msg={msg}
-              checked={tasks.find((task) => task.key === key)?.checked || false}
-              //optional chaining. does task.key===key exists or is undefined? only if it exists will
-              //it access the property .checked.
-              handleEdit={() => handleEdit(msg)}
-              handleDelete={() => handleDelete(key)}
-              handleToggle={() => handleToggle(key)}
-            />
-          ))}
-        
+          <div style={{ display: "inline-flex" }}></div>
+          {tasks &&
+            tasks.map(({ key, msg }) => (
+              <TaskItem
+                key={key}
+                msg={msg}
+                checked={
+                  tasks.find((task) => task.key === key)?.checked || false
+                }
+                //optional chaining. does task.key===key exists or is undefined? only if it exists will
+                //it access the property .checked.
+                handleEdit={() => handleEdit(msg)}
+                handleDelete={() => handleDelete(key)}
+                handleToggle={() => handleToggle(key)}
+              />
+            ))}
+          <h4 onClick={() => setTask("")}>clear all items</h4>
         </CardContent>
       </Card>
     </div>
