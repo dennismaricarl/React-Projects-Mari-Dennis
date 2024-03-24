@@ -1,4 +1,4 @@
-<h2>TO-DO LIST PROJECT<h2>
+<h2>To Do List<h2>
 
 Deployed site: https://6600b125ddc42d3e71dad155--willowy-crumble-e4dd16.netlify.app/
 
