@@ -6,6 +6,7 @@ function App() {
   return (
     <div >
       <TaskManager/>
+      <h3>By Mari Dennis</h3>
     </div>
   );
 }

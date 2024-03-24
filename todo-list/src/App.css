@@ -1,5 +1,6 @@
 .listItem{
-   display: flex 
+   display:flex;
+   flex-direction: row;
 }
 .listItem:hover{
     background-color: rgb(220, 231, 239); 
@@ -11,4 +12,9 @@
 
 .deleteIcon {
     color:rgb(169, 39, 39)
+}
+
+h3{ 
+    text-align: right;
+    margin: 30px;
 }

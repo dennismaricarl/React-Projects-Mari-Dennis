@@ -44,12 +44,29 @@ function TaskManager() {
     setTask([...updatedList]);
   }
 
+  function handleToggle(key) {
+    const toggle = (oldTasks) =>
+      oldTasks.map((task) =>
+        task.key === key ? { ...task, checked: !task.checked } : task
+      )
+
+      const updatedItems= toggle(tasks)  
+      //invoke the toggle function and pass tasks as an argument 
+      //toggle(tasks) executes the toggle function with the current tasks array
+      //and it returns a new array of tasks where the checked state is toggled for the task with the provided key. 
+    
+      setTask(updatedItems)
+
+      localStorage.setItem("tasks", JSON.stringify(updatedItems))
+  }
+ 
+
   return (
     <div>
-      <Card sx={{ margin: 57, marginTop: 8, padding: 5 }}>
+      <Card sx={{ml:50,mr:50,mt:15,mb:20, padding: 5 }}>
         <CardContent>
-          <Typography fontFamily="Georgia" fontSize={50}>
-            To-do List
+          <Typography fontFamily="Georgia" fontSize={50} textAlign="center">
+            To Do List
           </Typography>
           <br />
           <div style={{ display: "flex", alignItems: "center" }}>
@@ -63,22 +80,27 @@ function TaskManager() {
             />
             <Button
               variant="contained"
-              sx={{ marginLeft: 1, mb: 2, borderRadius: 180 }}
+              sx={{ mb: 3, padding:1}}
               onClick={handleSubmit}
             >
-              <Typography fontFamily="Georgia" fontSize={12}>
-                Submit
+              <Typography fontFamily="Georgia" fontSize={25}>
+                +
               </Typography>
             </Button>
           </div>
-          {tasks.map(({ key, msg }) => (
+          {tasks && tasks.map(({ key, msg }) => (
             <TaskItem
               key={key}
               msg={msg}
-              handleEdit={handleEdit}
+              checked={tasks.find((task) => task.key === key)?.checked || false}
+              //optional chaining. does task.key===key exists or is undefined? only if it exists will
+              //it access the property .checked.
+              handleEdit={() => handleEdit(msg)}
               handleDelete={() => handleDelete(key)}
+              handleToggle={() => handleToggle(key)}
             />
           ))}
+        
         </CardContent>
       </Card>
     </div>
