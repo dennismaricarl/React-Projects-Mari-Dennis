@@ -4,7 +4,7 @@ I've curated a series of simple React projects showcasing my proficiency in fund
 
 Project List: 
 1. Collection of traffic lights - https://magical-cheesecake-363d7f.netlify.app/
-2. To Do List - https://6600b125ddc42d3e71dad155--willowy-crumble-e4dd16.netlify.app/
+2. To Do List - https://661d9455826bb13a3d1ddc0d--relaxed-panda-106a71.netlify.app/
 
 
 ...more to come! 
