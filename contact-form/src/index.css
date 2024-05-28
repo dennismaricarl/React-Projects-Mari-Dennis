@@ -1,9 +1,10 @@
 .container {
     display: flex;
-    justify-content: space-between;
-    margin: 100px;
-    background-color: rgb(133, 170, 120);
-    
+    justify-content: center;
+    background-color: rgb(133, 170, 120); 
+    margin-top: 10%;
+    margin-left: 100px;
+    margin-right: 100px
 }
 
 .column1 {
@@ -14,7 +15,6 @@
     flex: 1;
   
 }
-
 .col2items{
     display: grid;
     align-items: center;
