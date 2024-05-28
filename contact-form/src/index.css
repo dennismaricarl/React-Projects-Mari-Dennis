@@ -1,7 +1,7 @@
 .container {
     display: flex;
     justify-content: center;
-    background-color: rgb(133, 170, 120); 
+    background-color: rgb(133, 170, 120);
     margin-top: 10%;
     margin-left: 100px;
     margin-right: 100px
@@ -13,9 +13,10 @@
 
 .column2 {
     flex: 1;
-  
+
 }
-.col2items{
+
+.col2items {
     display: grid;
     align-items: center;
     margin-top: 5%;
@@ -23,18 +24,18 @@
 }
 
 
-.input{
- 
+.input {
+
     margin-bottom: 15px;
     height: 30px;
     border-radius: 50px;
     border: 1px solid #cbcbcb;
     padding: 12px 20px;
-   
+
 }
 
 
-.input-msg{
+.input-msg {
     width: 60%;
     margin-bottom: 15px;
     height: 30px;
@@ -44,7 +45,23 @@
 }
 
 
-.image{
+.image {
     width: 95%;
     height: 100%;
+}
+
+.error {
+    color: rgb(125, 4, 4);
+    margin-top: 0%;
+
+}
+
+.thanks {
+    text-align: center;
+    font-family: Georgia;
+    border: 1px solid rgb(133, 170, 120);
+    border-width: 20px;
+    border-radius: 100px;
+    margin: 10%;
+    background-color: rgb(133, 170, 120);
 }
