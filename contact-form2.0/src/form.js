@@ -1,66 +1,38 @@
 import './App.css';
-import { useState } from 'react';
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+import { DevTool } from "@hookform/devtools"
+
 
 
 function Form() {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  const [errors, setErrors] = useState({})
+ 
+  const { register, control, handleSubmit, formState: { errors } } = useForm({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: ""
+    }
+  });
 
   const navigate = useNavigate();
 
+  const onSubmit = (data) =>  {
+    console.log("form submitted", data)
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // validation
-    let errors = {
-      email: "",
-      firstName: "",
-      lastName: "",
-      message: ""
-    }
-
-    let noErrors = true
-
-    if (!firstName) {
-      errors.firstName = "Please enter a first name."
-      noErrors = false
-    }
-
-    if (!lastName) {
-      errors.lastName = "Please enter a last name."
-      noErrors = false
-
-    }
-    if (!email || !email.includes('@')) {
-      errors.email = "Please enter a valid email address."
-      noErrors = false
-    }
-    if (!message) {
-      errors.message = "Please enter a message."
-      noErrors = false
-
-    }
-
-    setErrors(errors)
-
-    if (noErrors) {
-      navigate('/thankYou')
-    }
-
+  if(data){
+  navigate('/ThankYou')
   }
+}
 
 
   return (
     <div >
-
-      <form>
+  <DevTool control={control} />
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className='container'>
 
 
@@ -73,49 +45,54 @@ function Form() {
             <div className='col2items'>
 
               <input
-                onChange={(e) => setFirstName(e.target.value)}
+                {...register("firstName", { required: "This field is required.", minLength : {
+                  value:2, message: "Minimum 2 characters required."
+                } })}
                 type='text'
-                value={firstName}
+                id="firstName"
                 className="input"
                 placeholder='First Name'
-                required='true'
               />
-              {errors.firstName && <p className='error'>{errors.firstName}</p>}
+              <h4 className='error'>{errors.firstName?.message}</h4>
+
 
               <input
-                onChange={(e) => setLastName(e.target.value)}
+                {...register("lastName", { required: "This field is required.", minLength: {
+                  value: 2, message: "Minimum 2 characters required."
+                } })}
                 type='text'
+                id="lastName"
                 className="input"
-                value={lastName}
-                name='lastname'
-                id='lnmae'
                 placeholder='Last Name'
               />
-              {errors.lastName && <p className='error'>{errors.lastName}</p>}
+               <h4 className='error'>{errors.lastName?.message}</h4>
+
 
               <input
-                onChange={(e) => setEmail(e.target.value)}
+                {...register("email", { required: "Please enter a valid email.", pattern: {
+                  value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/, message: "Please enter a valid email."
+                }})}
                 type='text'
+                id="email"
                 className="input"
-                value={email}
-                name='emailaddress'
-                id='email'
-                placeholder='Email'
+                placeholder='Email'       
               />
-              {errors.email && <p className='error'>{errors.email}</p>}
+              <h4 className='error'>{errors.email?.message}</h4>
+
 
 
               <textarea
-                onChange={(e) => setMessage(e.target.value)}
+                {...register("message", { required: "This field is required." })}
                 type='text'
+                id="message"
                 className="input-msg"
-                name='message'
-                id='msg'
                 placeholder='Message'
               />
-              {errors.message && <p className='error'>{errors.message}</p>}
+              <h4 className='error'>{errors.message?.message}</h4>
+
 
               <Button
+                type='submit'
                 className='button'
                 variant="outlined"
                 style={{
@@ -128,7 +105,7 @@ function Form() {
                   marginTop: '5%'
                 }}
 
-                onClick={handleSubmit}>Send</Button>
+              >Send</Button>
             </div>
 
           </div>
