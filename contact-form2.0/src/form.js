@@ -8,7 +8,7 @@ import { DevTool } from "@hookform/devtools"
 
 
 function Form() {
- 
+
   const { register, control, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       firstName: "",
@@ -20,18 +20,18 @@ function Form() {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data) =>  {
+  const onSubmit = (data) => {
     console.log("form submitted", data)
 
-  if(data){
-  navigate('/ThankYou')
+    if (data) {
+      navigate('/ThankYou')
+    }
   }
-}
 
 
   return (
     <div >
-  <DevTool control={control} />
+      <DevTool control={control} />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='container'>
 
@@ -41,13 +41,15 @@ function Form() {
           </div>
 
           <div className='column2'>
-            <Typography sx={{ fontFamily: "Georgia", fontSize: '50px', paddingTop: '50px' }}>Contact Us</Typography>
+            <h2 className='contact-us'>Contact Us</h2>
             <div className='col2items'>
 
               <input
-                {...register("firstName", { required: "This field is required.", minLength : {
-                  value:2, message: "Minimum 2 characters required."
-                } })}
+                {...register("firstName", {
+                  required: "This field is required.", minLength: {
+                    value: 2, message: "Minimum 2 characters required."
+                  }
+                })}
                 type='text'
                 id="firstName"
                 className="input"
@@ -57,25 +59,29 @@ function Form() {
 
 
               <input
-                {...register("lastName", { required: "This field is required.", minLength: {
-                  value: 2, message: "Minimum 2 characters required."
-                } })}
+                {...register("lastName", {
+                  required: "This field is required.", minLength: {
+                    value: 2, message: "Minimum 2 characters required."
+                  }
+                })}
                 type='text'
                 id="lastName"
                 className="input"
                 placeholder='Last Name'
               />
-               <h4 className='error'>{errors.lastName?.message}</h4>
+              <h4 className='error'>{errors.lastName?.message}</h4>
 
 
               <input
-                {...register("email", { required: "Please enter a valid email.", pattern: {
-                  value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/, message: "Please enter a valid email."
-                }})}
+                {...register("email", {
+                  required: "Please enter a valid email.", pattern: {
+                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/, message: "Please enter a valid email."
+                  }
+                })}
                 type='text'
                 id="email"
                 className="input"
-                placeholder='Email'       
+                placeholder='Email'
               />
               <h4 className='error'>{errors.email?.message}</h4>
 
