@@ -4,7 +4,14 @@
   background-color: rgb(133, 170, 120);
   margin-top: 8%;
   margin-left: 100px;
-  margin-right: 100px
+  margin-right: 100px;
+
+  @media (max-device-width: 390px) {
+    display: block;
+    width: 100%;
+    margin: auto;
+    
+  }
 }
 
 .column1 {
@@ -16,22 +23,29 @@
 
 }
 
+
 .col2items {
   display: grid;
   align-items: center;
   margin-top: 5%;
   margin-right: 10%;
+
+  @media (max-width:390px) {
+    font-size: 10px;
+  }
 }
 
 
 .input {
-
   margin-bottom: 15px;
   height: 30px;
   border-radius: 50px;
   border: 1px solid #cbcbcb;
   padding: 12px 20px;
 
+  @media (max-width:390px) {
+    margin-left: 20px;
+  }
 }
 
 
@@ -42,12 +56,21 @@
   border-radius: 40px;
   border: 1px solid #cbcbcb;
   padding: 20px 20px;
+
+  @media (max-width:390px) {
+    margin-left: 20px;
+  }
 }
 
 
 .image {
   width: 95%;
   height: 100%;
+  @media (max-width:390px) {
+    width: 100%;
+  }
+
+
 }
 
 .error {
