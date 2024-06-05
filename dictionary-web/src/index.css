@@ -1,0 +1,57 @@
+body {
+
+    margin-left: 35%
+}
+
+/* Search Component */
+
+.input {
+    width: 40%;
+    height: 35px;
+    border-radius: 12px;
+    padding-left: 10px;
+    background-color: rgb(241, 240, 240);
+    border-color: rgb(241, 240, 240);
+    margin-left: -20px;
+}
+
+.search-icon {
+    position: relative;
+    left: 38%;
+    top: 8px;
+}
+
+.word-phonetic {
+    color: rgb(164, 69, 237);
+    font-size: 20px;
+    position: absolute;
+    bottom: 70%;
+}
+
+
+.play-icon {
+    position: absolute;
+    margin-left: 25%;
+    margin-top: 55px;
+    color: rgb(195, 150, 229);
+}
+
+
+
+/* Definition component */
+
+.part-of-speech {
+    font-style: italic;
+    display: inline-block;
+    margin-right: 20px;
+
+}
+
+.divider {
+    display: inline-block;
+    width: 37%;
+    vertical-align: middle;
+
+
+
+}

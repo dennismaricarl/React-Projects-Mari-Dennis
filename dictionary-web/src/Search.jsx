@@ -2,6 +2,7 @@ import { useState } from "react";
 import Definition from "./Definition";
 import Word from "./Word";
 import TopBar from "./TopBar";
+import SearchIcon from '@mui/icons-material/Search';
 
 const Search = () => {
 
@@ -29,8 +30,8 @@ const Search = () => {
     return (
         <>
             <TopBar />
-            <input type="text" onChange={(e) => setFindWord(e.target.value)} />
-            <button onClick={handleSubmit}>SUBMIT</button>
+            <SearchIcon className='search-icon' onClick={handleSubmit} />
+            <input className='input' type="text" onChange={(e) => setFindWord(e.target.value)} />
             <Word findWord={findWord} />
             <Definition findWord={findWord} />
 
