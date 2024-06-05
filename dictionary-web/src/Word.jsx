@@ -1,4 +1,5 @@
-import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import { ReactComponent as IconPlay } from './images/icon-play.svg';
+
 
 const Word = ({ findWord }) => {
 
@@ -23,11 +24,11 @@ const Word = ({ findWord }) => {
                         <h1 style={{ fontFamily: 'sans-serif', fontSize: '50px' }}>{findWord.word}</h1>
 
                         {findWord.phonetics && (
-                            <PlayCircleIcon className='play-icon' style={{ fontSize: '60' }} onClick={playAudio} />
+                            <IconPlay className='play-icon' onClick={playAudio} />
 
                         )}
                         <p className='word-phonetic'>{findWord.phonetic}</p>
-
+               
                     </div>
                 </>
 

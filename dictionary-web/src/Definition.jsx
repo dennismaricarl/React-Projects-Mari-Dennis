@@ -1,4 +1,6 @@
 import Divider from '@mui/material/Divider';
+import {ReactComponent as IconNewWindow} from './images/icon-new-window.svg'
+
 
 const Definition = ({ findWord }) => {
 
@@ -50,7 +52,9 @@ const Definition = ({ findWord }) => {
                                     <div style={{ display: 'flex', gap: '20px' }}>
 
                                         <p>Source</p>
-                                        <a style={{ marginTop: '15px' }} href={findWord.sourceUrls}>{findWord.sourceUrls}</a>
+                                        <a style={{ marginTop: '15px' }} href={findWord.sourceUrls}>{findWord.sourceUrls}
+                                        <IconNewWindow style={{ marginLeft:'10px'}} onClick={()=> window.location.href(findWord.sourceUrls)}/>
+                                        </a>
                                     </div>
 
                                 </>

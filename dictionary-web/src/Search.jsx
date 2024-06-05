@@ -2,7 +2,7 @@ import { useState } from "react";
 import Definition from "./Definition";
 import Word from "./Word";
 import TopBar from "./TopBar";
-import SearchIcon from '@mui/icons-material/Search';
+import { ReactComponent as SearchIcon } from './images/icon-search.svg';
 
 const Search = () => {
 
