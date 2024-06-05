@@ -46,7 +46,7 @@ const Definition = ({ findWord }) => {
                                 <>
                                     {meanings.definitions[0].example && <p style={{ marginTop: '-30px', marginLeft: '40px' }}>"{meanings.definitions[0].example}" </p>}
 
-                                    <Divider style={{ width: '42%'}} />
+                                    <Divider style={{ width: '60%', marginTop:'50px'}} />
                                     <div style={{ display: 'flex', gap: '20px' }}>
 
                                         <p>Source</p>

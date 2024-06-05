@@ -3,9 +3,12 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 const Word = ({ findWord }) => {
 
     const playAudio = () => {
-        if (findWord.phonetics && findWord.phonetics[0].audio) {
-            let audio = new Audio(findWord.phonetics[0].audio)
-            audio.play()
+        if (findWord.phonetics) {
+            const phoneticWithAudio = findWord.phonetics.find(phonetic => phonetic.audio)
+            if (phoneticWithAudio) {
+                let audio = new Audio(phoneticWithAudio.audio)
+                audio.play()
+            }
         } else {
             console.error("Audio file not found.")
         }
