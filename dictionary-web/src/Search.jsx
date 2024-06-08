@@ -29,7 +29,7 @@ const Search = () => {
 
     return (
         <>
-            <TopBar />
+          
             <SearchIcon className='search-icon' onClick={handleSubmit} />
             <input className='input' type="text" onChange={(e) => setFindWord(e.target.value)} />
             <Word findWord={findWord} />

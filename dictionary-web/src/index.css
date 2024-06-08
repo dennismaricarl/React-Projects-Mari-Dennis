@@ -1,3 +1,12 @@
+.lightTheme { 
+    background-color: antiquewhite;
+}
+
+
+.darkTheme{
+    background-color: rgb(61, 24, 24);
+}
+
 body {
 
     margin-left: 30%
@@ -25,7 +34,7 @@ body {
     color: rgb(164, 69, 237);
     font-size: 20px;
     position: absolute;
-    bottom: 68%;
+    bottom: 66%;
 }
 
 
@@ -53,3 +62,5 @@ body {
     vertical-align: middle;
 
 }
+
+

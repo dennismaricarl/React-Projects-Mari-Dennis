@@ -1,5 +1,5 @@
 import Divider from '@mui/material/Divider';
-import {ReactComponent as IconNewWindow} from './images/icon-new-window.svg'
+import { ReactComponent as IconNewWindow } from './images/icon-new-window.svg'
 
 
 const Definition = ({ findWord }) => {
@@ -26,7 +26,7 @@ const Definition = ({ findWord }) => {
                                 </ul>
 
 
-                            ))}
+                            ))} 
 
                             <div style={{ display: 'flex', gap: '20px' }}>
                                 {index === 0 && <p>Synonyms</p>}
@@ -48,12 +48,12 @@ const Definition = ({ findWord }) => {
                                 <>
                                     {meanings.definitions[0].example && <p style={{ marginTop: '-30px', marginLeft: '40px' }}>"{meanings.definitions[0].example}" </p>}
 
-                                    <Divider style={{ width: '60%', marginTop:'50px'}} />
+                                    <Divider style={{ width: '60%', marginTop: '50px' }} />
                                     <div style={{ display: 'flex', gap: '20px' }}>
 
                                         <p>Source</p>
                                         <a style={{ marginTop: '15px' }} href={findWord.sourceUrls}>{findWord.sourceUrls}
-                                        <IconNewWindow style={{ marginLeft:'10px'}} onClick={()=> window.location.href(findWord.sourceUrls)}/>
+                                            <IconNewWindow style={{ marginLeft: '10px' }} onClick={() => window.location.href(findWord.sourceUrls)} />
                                         </a>
                                     </div>
 
