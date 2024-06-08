@@ -1,17 +1,3 @@
-.lightTheme { 
-    background-color: antiquewhite;
-}
-
-
-.darkTheme{
-    background-color: rgb(61, 24, 24);
-}
-
-body {
-
-    margin-left: 30%
-}
-
 /* Search Component */
 
 .input {
@@ -62,5 +48,3 @@ body {
     vertical-align: middle;
 
 }
-
-

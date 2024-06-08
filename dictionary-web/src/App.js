@@ -6,6 +6,7 @@ import { useState } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 
 
+
 function App() {
 
 
@@ -31,13 +32,14 @@ function App() {
 
 
   return (
-    <div>
-      <ThemeProvider theme={mode === 'light' ? darkTheme : lightTheme}>
+    <div style={{ marginLeft: '30%' }}>
+      <ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
         <CssBaseline />
         <TopBar mode={mode} handleToggle={handleToggle} />
         <Search />
       </ThemeProvider>
     </div>
+
   );
 }
 
