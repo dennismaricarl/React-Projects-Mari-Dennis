@@ -4,7 +4,7 @@
     width: 736px;
     height: 64px;
     border-radius: 12px;
-    padding-left: 10px;
+    padding-left: 20px;
     background-color: rgb(241, 240, 240);
     border-color: rgb(241, 240, 240);
     margin-left: -20px;
@@ -12,7 +12,7 @@
 
 .search-icon {
     position: relative;
-    left: 56%;
+    left: 55%;
     top: 8px;
 }
 
@@ -31,6 +31,11 @@
     color: rgb(195, 150, 229);
 }
 
+.error-message{
+    color:rgb(237, 28, 28);
+    margin-top: '5px'
+}
+
 
 
 /* Definition component */
@@ -47,4 +52,13 @@
     width: 55%;
     vertical-align: middle;
 
+}
+
+.def-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.definition {
+    max-width: 700px;
 }

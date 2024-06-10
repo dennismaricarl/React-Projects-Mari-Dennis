@@ -1,6 +1,5 @@
 import { ReactComponent as Logo } from './images/logo.svg'
 import { ReactComponent as ArrowDown } from './images/icon-arrow-down.svg'
-import { ReactComponent as Moon } from './images/icon-moon.svg'
 import Switch from '@mui/material/Switch';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 

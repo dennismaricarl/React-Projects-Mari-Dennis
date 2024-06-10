@@ -5,7 +5,7 @@ import { ReactComponent as IconNewWindow } from './images/icon-new-window.svg'
 const Definition = ({ findWord }) => {
 
     return (
-        <div className='definition-container'>
+        <div className='def-container'>
 
             {findWord && (
                 <>
@@ -17,16 +17,16 @@ const Definition = ({ findWord }) => {
                             <Divider className='divider' />
 
 
-                            <h3 >Meaning</h3>
+                            <h3> Meaning </h3>
 
                             {meanings.definitions && meanings.definitions.slice(0, index === 0 ? 3 : 1).map((definition, defIndex) => (
 
                                 <ul key={defIndex}>
-                                    <li >{definition.definition}</li>
+                                    <li className='definition'>{definition.definition}</li>
                                 </ul>
 
 
-                            ))} 
+                            ))}
 
                             <div style={{ display: 'flex', gap: '20px' }}>
                                 {index === 0 && <p>Synonyms</p>}
