@@ -6,17 +6,9 @@ import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
-const TopBar = ({ mode, handleToggle, handleClick, fontArray }) => {
+const TopBar = ({ mode, handleToggle, handleClick, fontArray, show, showOptions}) => {
 
-    const [show, setShow] = useState(false)
-
-
-    const showOptions = () => {
-        setShow(!show)
-    }
-
-
-
+   
     return (
         <div style={{ marginBottom: '20px', marginTop: '60px' }}>
 
@@ -24,22 +16,23 @@ const TopBar = ({ mode, handleToggle, handleClick, fontArray }) => {
             <div style={{ display: 'inline-block', marginLeft: '46%' }}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     <KeyboardArrowDownIcon className='arrow-down' onClick={showOptions} />
-
+                    
 
 
                     {show && (
                         <div className='font-items'>
                             {fontArray.map((f, index) => (
                                 <MenuItem key={index} onClick={() => handleClick(`${f}`)} >{f}</MenuItem>
-                            ))}
+                            ))}  
                         </div>
 
                     )}
 
 
                     <Switch onChange={handleToggle} />
-                    
+
                     {mode === 'light' ? < DarkModeOutlinedIcon /> : <DarkModeOutlinedIcon style={{ color: '#c396e5' }} />}
+
                 </div>
             </div>
 

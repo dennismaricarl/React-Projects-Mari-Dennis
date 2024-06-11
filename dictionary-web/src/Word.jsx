@@ -21,14 +21,14 @@ const Word = ({ findWord }) => {
             {findWord && (
                 <>
                     <div style={{ display: 'flex' }}>
-                        <h1 style={{ fontSize: '50px'}}>{findWord.word}</h1>
+                        <h1 style={{ fontSize: '50px' }}>{findWord.word}</h1>
 
                         {findWord.phonetics && (
                             <IconPlay className='play-icon' onClick={playAudio} />
 
                         )}
                         <p className='word-phonetic'>{findWord.phonetic}</p>
-               
+
                     </div>
                 </>
 
