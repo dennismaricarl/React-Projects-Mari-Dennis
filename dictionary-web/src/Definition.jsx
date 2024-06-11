@@ -51,8 +51,8 @@ const Definition = ({ findWord }) => {
                                     <Divider style={{ width: '60%', marginTop: '50px' }} />
                                     <div style={{ display: 'flex', gap: '20px' }}>
 
-                                        <p>Source</p>
-                                        <a style={{ marginTop: '15px' }} href={findWord.sourceUrls}>{findWord.sourceUrls}
+                                        <p style={{ fontSize: 'small' }}>Source</p>
+                                        <a style={{ marginTop: '15px', fontSize: 'small' }} href={findWord.sourceUrls}>{findWord.sourceUrls}
                                             <IconNewWindow style={{ marginLeft: '10px' }} onClick={() => window.location.href(findWord.sourceUrls)} />
                                         </a>
                                     </div>

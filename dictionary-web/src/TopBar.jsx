@@ -1,25 +1,46 @@
 import { ReactComponent as Logo } from './images/logo.svg'
-import { ReactComponent as ArrowDown } from './images/icon-arrow-down.svg'
 import Switch from '@mui/material/Switch';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import { useState } from 'react';
+import MenuItem from '@mui/material/MenuItem';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
+const TopBar = ({ mode, handleToggle, handleClick, fontArray }) => {
 
-const TopBar = ({ mode, handleToggle }) => {
+    const [show, setShow] = useState(false)
+
+
+    const showOptions = () => {
+        setShow(!show)
+    }
+
 
 
     return (
         <div style={{ marginBottom: '20px', marginTop: '60px' }}>
 
-            <Logo />
-            <div style={{ display: 'inline-block', marginLeft: '50%' }}>
-                <ArrowDown style={{ marginRight: '20px' }} />
+            <Logo onClick={() => window.location.reload()} />
+            <div style={{ display: 'inline-block', marginLeft: '46%' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <KeyboardArrowDownIcon className='arrow-down' onClick={showOptions} />
 
 
-                <Switch onChange={handleToggle} />
 
-                {mode === 'light' ? < DarkModeOutlinedIcon /> : <DarkModeOutlinedIcon style={{ color: '#c396e5' }} />}
+                    {show && (
+                        <div className='font-items'>
+                            {fontArray.map((f, index) => (
+                                <MenuItem key={index} onClick={() => handleClick(`${f}`)} >{f}</MenuItem>
+                            ))}
+                        </div>
 
+                    )}
+
+
+                    <Switch onChange={handleToggle} />
+                    
+                    {mode === 'light' ? < DarkModeOutlinedIcon /> : <DarkModeOutlinedIcon style={{ color: '#c396e5' }} />}
+                </div>
             </div>
 
             <br />

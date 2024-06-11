@@ -1,4 +1,17 @@
-/* Search Component */
+/* App.js */
+.monospace {
+    font-family: monospace;
+}
+
+.sans-serif {
+    font-family: sans-serif;
+}
+
+.serif {
+    font-family: serif;
+}
+
+/* Search component */
 
 .input {
     width: 736px;
@@ -16,11 +29,15 @@
     top: 8px;
 }
 
+.search-icon:hover {
+    transform: scale(1.2);
+}
+
 .word-phonetic {
     color: rgb(164, 69, 237);
     font-size: 20px;
     position: absolute;
-    bottom: 66%;
+    bottom: 63%;
 }
 
 
@@ -31,8 +48,12 @@
     color: rgb(195, 150, 229);
 }
 
-.error-message{
-    color:rgb(237, 28, 28);
+.play-icon:hover {
+    transform: scale(1.1);
+}
+
+.error-message {
+    color: rgb(237, 28, 28);
     margin-top: '5px'
 }
 
@@ -61,4 +82,27 @@
 
 .definition {
     max-width: 700px;
+}
+
+/* TopBar component  */
+
+.arrow-down {
+    color: rgb(164, 69, 237);
+    transition: transform 0.3s ease;
+
+}
+
+.arrow-down:hover {
+    transform: scale(1.5);
+
+}
+
+
+.font-items {
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 90px;
+    background-color: rgb(164, 69, 237);
+    color: white;
+    z-index: 1000;
 }

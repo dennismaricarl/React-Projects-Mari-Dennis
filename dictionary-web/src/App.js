@@ -11,6 +11,7 @@ function App() {
 
 
   const [mode, setMode] = useState('light')
+  const [font, setFont] = useState('')
 
 
   const lightTheme = createTheme({
@@ -25,6 +26,15 @@ function App() {
     },
   });
 
+
+  const fontArray = ['serif', 'sans-serif', 'monospace']
+
+  const handleClick = (fontId) => {
+    const selectedFont = fontArray.filter((f) => f === fontId)
+    setFont(selectedFont)
+  }
+
+
   const handleToggle = () => {
     setMode((prevMode) => prevMode === 'light' ? 'dark' : 'light')
 
@@ -32,10 +42,10 @@ function App() {
 
 
   return (
-    <div style={{ marginLeft: '30%' }}>
+    <div className={`${font}`} style={{ marginLeft: '30%' }}>
       <ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
         <CssBaseline />
-        <TopBar mode={mode} handleToggle={handleToggle} />
+        <TopBar mode={mode} handleToggle={handleToggle} font={font} handleClick={handleClick} fontArray={fontArray} />
         <Search />
       </ThemeProvider>
     </div>
