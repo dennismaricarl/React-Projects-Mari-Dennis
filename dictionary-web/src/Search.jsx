@@ -3,19 +3,19 @@ import Definition from "./Definition";
 import Word from "./Word";
 import { ReactComponent as SearchIcon } from './images/icon-search.svg';
 
+
 const Search = () => {
 
     const [findWord, setFindWord] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("")
+    const [emoji, setEmoji] = useState("")
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        setMessage(" ")
-        setError(" ")
 
         if (!findWord) {
-            setMessage('Please enter a word.')
+            setMessage('Whoops, can\'t be empty...');
             return
         }
 
@@ -27,11 +27,14 @@ const Search = () => {
             if (response.ok) {
                 setFindWord(result[0])
             } else {
-                setError(`${result.title}: ${result.message}`)
+                setError(`${result.title} \n ${result.message}`)
+                setEmoji('😔')
 
                 const timer = setTimeout(() => {
                     setError(" ")
-                }, 3000)
+                    setMessage(" ")
+                    setEmoji(" ")
+                }, 4000)
                 return () => clearTimeout(timer)
             }
         } catch (error) {
@@ -46,8 +49,18 @@ const Search = () => {
 
             <SearchIcon className='search-icon' onClick={handleSubmit} />
             <input className='input' type="text" onChange={(e) => setFindWord(e.target.value)} />
-            {!findWord && <h3 style={{ color: 'red' }}>{message}</h3>}
-            {error && <h3 className="error-message">{error}</h3>}
+            {!findWord && <p style={{ color: 'red' }}>{message}</p>}
+
+            {error && (
+                <div style={{ display: 'flex', flexDirection: 'column', marginTop: '80px' }}>
+                    <span style={{ marginLeft: '28%', fontSize: '50px' }}>{emoji}</span>
+                    <h3 style={{ marginLeft: '22%' }}>{message}</h3>
+                    <p style={{ marginLeft: '12%' }}>{error}</p>
+                </div>
+            )}
+
+
+
             <Word findWord={findWord} />
             <Definition findWord={findWord} />
 
