@@ -1,29 +1,31 @@
 import { ReactComponent as Logo } from './images/logo.svg'
 import Switch from '@mui/material/Switch';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import { useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
-const TopBar = ({ mode, handleToggle, handleClick, fontArray, show, showOptions}) => {
+const TopBar = ({ mode, handleToggle, handleClick, font, fontArray, show, showOptions }) => {
 
-   
+
     return (
         <div style={{ marginBottom: '20px', marginTop: '60px' }}>
 
             <Logo onClick={() => window.location.reload()} />
-            <div style={{ display: 'inline-block', marginLeft: '46%' }}>
+            <div style={{ display: 'inline-block', marginLeft: '38%' }}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <h5 style={{ minWidth: '90px', textAlign: 'right', }}>{font}</h5>
                     <KeyboardArrowDownIcon className='arrow-down' onClick={showOptions} />
-                    
+                    <span className='line-divider'></span>
+
+
 
 
                     {show && (
                         <div className='font-items'>
                             {fontArray.map((f, index) => (
                                 <MenuItem key={index} onClick={() => handleClick(`${f}`)} >{f}</MenuItem>
-                            ))}  
+                            ))}
                         </div>
 
                     )}

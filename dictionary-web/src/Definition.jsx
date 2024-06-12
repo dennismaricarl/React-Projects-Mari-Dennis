@@ -33,7 +33,7 @@ const Definition = ({ findWord }) => {
                                 <p>{meanings.synonyms.slice(0, index === 0 ? 1 : 0).map(() => (
 
 
-                                    <p style={{ display: 'flex', gap: '10px', position: 'relative', bottom: '32px', marginBottom: '-45px' }}>{meanings.synonyms.slice(0, 3).map((syno) => (
+                                    <p className='synonyms'>{meanings.synonyms.slice(0, 3).map((syno) => (
                                         <p>{syno}</p>
 
                                     ))}</p>
@@ -48,7 +48,7 @@ const Definition = ({ findWord }) => {
                                 <>
                                     {meanings.definitions[0].example && <p style={{ marginTop: '-30px', marginLeft: '40px' }}>"{meanings.definitions[0].example}" </p>}
 
-                                    <Divider style={{ width: '60%', marginTop: '50px' }} />
+                                    <Divider style={{ width: '60%', marginTop: '30px' }} />
                                     <div style={{ display: 'flex', gap: '20px' }}>
 
                                         <p style={{ fontSize: 'small' }}>Source</p>
