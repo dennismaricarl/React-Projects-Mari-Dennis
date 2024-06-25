@@ -7,6 +7,7 @@ Project List:
 2. To Do List - https://661d9455826bb13a3d1ddc0d--relaxed-panda-106a71.netlify.app/
 3. Contact Form - https://6655407343b44b8046f8dee9--celebrated-baklava-809fd6.netlify.app/
 4. Contact Form 2.0 (React Hook Form) - https://6657bdf6c001c362e0e438b4--willowy-kringle-4c3ec7.netlify.app/
+5. Dictionary Web App (Design by FrontEnd Mentor)- https://667a1e495981da663e2d0534--jazzy-wisp-660983.netlify.app/
 
 
 ...more to come! 
