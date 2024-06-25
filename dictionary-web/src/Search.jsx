@@ -27,14 +27,19 @@ const Search = () => {
             if (response.ok) {
                 setFindWord(result[0])
             } else {
-                setError(`${result.title} \n ${result.message}`)
+                setError(<div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
+                    <span style={{ marginLeft: '23%', fontWeight: 'bold' }}>{result.title}</span>
+                    <p style={{
+                        fontSize: '15px', fontWeight: 'lighter', textAlign: 'center', marginRight: '35%'
+                    }}>{result.message}<br /> You can try the search again later or head to the web instead.</p>
+                </div>)
                 setEmoji('😔')
 
                 const timer = setTimeout(() => {
                     setError(" ")
                     setMessage(" ")
                     setEmoji(" ")
-                }, 4000)
+                }, 5000)
                 return () => clearTimeout(timer)
             }
         } catch (error) {
@@ -49,20 +54,19 @@ const Search = () => {
 
             <SearchIcon className='search-icon' onClick={handleSubmit} />
             <input className='input' type="text" onChange={(e) => setFindWord(e.target.value)} />
-            {!findWord && <p style={{ color: 'red' }}>{message}</p>}
-
-            {error && (
-                <div style={{ display: 'flex', flexDirection: 'column', marginTop: '80px' }}>
-                    <span style={{ marginLeft: '28%', fontSize: '50px' }}>{emoji}</span>
-                    <h3 style={{ marginLeft: '22%' }}>{message}</h3>
-                    <p style={{ marginLeft: '12%' }}>{error}</p>
-                </div>
-            )}
-
 
 
             <Word findWord={findWord} />
             <Definition findWord={findWord} />
+            {!findWord && <p style={{ color: 'red' }}>{message}</p>}
+
+            {error && (
+                <div style={{ marginTop: '50px' }}>
+                    <span style={{ marginLeft: '28%', fontSize: '50px' }}>{emoji}</span>
+                    <h3 >{error}</h3>
+                </div>
+            )}
+
 
 
         </>

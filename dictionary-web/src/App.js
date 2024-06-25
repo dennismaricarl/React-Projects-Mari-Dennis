@@ -49,7 +49,7 @@ function App() {
 
 
   return (
-    <div className={`${font}`} style={{ marginLeft: '30%' }}>
+    <div className={`${font} `} style={{ marginLeft: '30%' }}>
       <ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
         <CssBaseline />
         <TopBar

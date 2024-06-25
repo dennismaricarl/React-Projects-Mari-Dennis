@@ -22,10 +22,17 @@ const TopBar = ({ mode, handleToggle, handleClick, font, fontArray, show, showOp
 
 
                     {show && (
-                        <div className='font-items'>
+                        <div className='font-items'
+                            style={{
+                                backgroundColor: mode === 'dark' ? 'black' : 'white',
+                                boxShadow: mode === 'dark' ? '0 0 15px rgba(164, 69, 237, 0.75)' : 'none'
+                            }}>
+
+
                             {fontArray.map((f, index) => (
-                                <MenuItem key={index} onClick={() => handleClick(`${f}`)} >{f}</MenuItem>
+                                <MenuItem className="fonts" key={index} onClick={() => handleClick(`${f}`)} >{f}</MenuItem>
                             ))}
+
                         </div>
 
                     )}

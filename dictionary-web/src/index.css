@@ -3,6 +3,7 @@
     font-family: monospace;
 }
 
+
 .sans-serif {
     font-family: sans-serif;
 }
@@ -10,6 +11,7 @@
 .serif {
     font-family: serif;
 }
+
 
 /* Search component */
 
@@ -37,7 +39,7 @@
     color: rgb(164, 69, 237);
     font-size: 20px;
     position: absolute;
-    bottom: 62%;
+    bottom: 64%;
 }
 
 
@@ -84,7 +86,7 @@
     color: rgb(164, 69, 237)
 }
 
-.synonyms{
+.synonyms {
     display: flex;
     gap: 10px;
     position: relative;
@@ -110,14 +112,18 @@
 
 .font-items {
     position: absolute;
-    margin-left: 30px;
-    margin-top: 90px;
-    background-color: rgb(164, 69, 237);
-    color: white;
-    z-index: 1000;
+    margin-top: 9%;
+    margin-right: 2%;
+    border-radius: 10px;
+    width: 8%;
 }
 
-.line-divider{
+.fonts:hover {
+    color: rgb(164, 69, 237);
+}
+
+
+.line-divider {
     border-left: 2px solid rgb(219, 215, 215);
     height: 30px;
     margin-right: 15px;
