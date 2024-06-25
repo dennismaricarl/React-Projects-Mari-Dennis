@@ -1,3 +1,31 @@
+<h2>Dictionary Web App<h2>
+
+Deployed site: https://667a1e495981da663e2d0534--jazzy-wisp-660983.netlify.app/
+
+<h4>This dictionary web app project is a challenge from FrontEnd Mentor. I developed the features and implemented the design provided by Frontend Mentor.</h4>
+
+<h4>Notable Features: </h4>
+
+> Word Search Functionality: Users can search for words using the input field and get responses from the Free Dictionary API.<br/><br/>
+> Form Validation: Displays a form validation message if the user tries to submit a blank form.<br/><br/>
+> Audio Playback: Plays the audio pronunciation of a word when available.<br/><br/>
+> Font Switching: Users can switch between serif, sans serif, and monospace fonts.<br/><br/>
+> Theme Switching: Supports both light and dark themes, allowing users to toggle between them.<br/><br/>
+> Responsive Design: The layout is optimized for various device screen sizes.<br/><br/>
+> Interactive Elements: All interactive elements on the page have hover and focus states. </h6>
+
+<p>Technologies Used: </p>
+<h6>HTML & CSS: For structuring and styling the web app. <br/>
+JSX & React: For building the user interface and managing state. <br/>
+Figma: For designing the user interface.</h6>
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Frontend Mentor - Dictionary web app
 
 ![Design preview for the Dictionary web app coding challenge](./preview.jpg)
